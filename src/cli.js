@@ -22,7 +22,7 @@ function main () {
         const _credentials = credentials || process.env.GOOGLE_APPLICATION_CREDENTIALS
         if (!process.env.PROJECT_ID && !project) { throw Error('Project is missing.') }
         const _project = project || process.env.PROJECT_ID
-        const _name = logname
+        const _name = logname || process.env.LOG_NAME
 
         const customKeys = {}
         key.forEach(k => {
