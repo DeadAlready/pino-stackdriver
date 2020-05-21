@@ -24,6 +24,7 @@ You can pass the following options via cli arguments:
 | -p | --project &lt;project&gt; | Your Google Cloud Platform project ID (or use env var PROJECT_ID) |
 | -c | --credentials &lt;credentials&gt; | The file path of the JSON file that contains your service account key (or use env var GOOGLE_APPLICATION_CREDENTIALS) |
 | -k | --key &lt;key:customKey&gt; | Repeatable `key:customKey` pairs for custom keys (see [API docs](./CLI.md#keys))
+| -n | --name &lt;project&gt; | The log name to use (or use env var LOG_NAME) |
 | -h | --help | Output usage information |
 
 See the [API](./API.md) documentation for details.

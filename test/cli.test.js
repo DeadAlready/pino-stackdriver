@@ -84,6 +84,19 @@ test('picks up environment variables', (t) => {
   })
 })
 
+test('accepts -n', (t) => {
+  t.plan(1)
+  process.env.GOOGLE_APPLICATION_CREDENTIALS = './credentials.json'
+  process.env.PROJECT_ID = 'project-id'
+  const app = spawn('node', [appPath, '-n', 'test_log'])
+  app.stdout.on('data', (data) => {
+    const msg = data.toString()
+    const res = (msg.indexOf('logging') >= 0)
+    t.ok(res)
+    app.kill()
+  })
+})
+
 test('pipes data to output', (t) => {
   t.plan(1)
 
